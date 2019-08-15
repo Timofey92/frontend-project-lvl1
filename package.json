@@ -4,10 +4,14 @@
   "description": "Project",
   "main": "index.js",
   "bin": {
-    "brain-games": "./src/bin/brain-games.js" 
+    "brain-games": "dist/bin/brain-games.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,11 @@
   "homepage": "https://github.com/Timofey92/frontend-project-lvl1#readme",
   "keywords": [
     "MyProj"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
 }
