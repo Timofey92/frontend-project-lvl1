@@ -3,27 +3,26 @@ import readlineSync from 'readline-sync';
 // Game Core,
 const questionsCount = 3;
 
-const startGame = (Description, gameProcess) => {
+const startGame = (gameDescription, gameProcess) => {
   console.log('Welcome to the Brain Games!');
-  console.log(Description);
+  console.log(gameDescription);
   console.log('');
-  const nameQ = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${nameQ}!`);
+  const nameQuestion = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${nameQuestion}!`);
 
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < questionsCount; i++) {
-    const { question, answer } = gameProcess();
+  for (let i = 0; i < questionsCount; i += 1) {
+    const { mainQuestion, rightAnswer } = gameProcess();
 
-    console.log(`Question: ${question}`);
+    console.log(`Question: ${mainQuestion}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer !== answer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'`);
-      console.log(`Let's try again, ${nameQ}`);
+    if (userAnswer !== rightAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+      console.log(`Let's try again, ${nameQuestion}`);
       return;
     }
     console.log('Correct!');
   }
-  console.log(`Congratulations, ${nameQ}!`);
+  console.log(`Congratulations, ${nameQuestion}!`);
 };
 export default startGame;

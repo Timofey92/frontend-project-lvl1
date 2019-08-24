@@ -2,42 +2,42 @@
 import getRandomint from '../randomizer';
 import startGame from '..';
 
-const Descrption = 'What is the result of the expression?';
+const gameDescrption = 'What is the result of the expression?';
 
-const Operators = ['+', '-', '*'];
+const getOperators = ['+', '-', '*'];
 
-const operatorsLength = Operators.length;
+const operatorsLength = getOperators.length;
 
 const gameProcess = () => {
   const firstNumber = getRandomint(20, 1);
   const secondNumber = getRandomint(20, 1);
   const operatorIndex = getRandomint(operatorsLength, 0);
-  const operator = Operators[operatorIndex];
-  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const printOperator = getOperators[operatorIndex];
+  const mainQuestion = `${firstNumber} ${printOperator} ${secondNumber}`;
 
-  let answer;
+  let rightAnswer;
 
-  switch (operator) {
+  switch (printOperator) {
     case '+':
-      answer = firstNumber + secondNumber;
+      rightAnswer = firstNumber + secondNumber;
       break;
     case '-':
-      answer = firstNumber - secondNumber;
+      rightAnswer = firstNumber - secondNumber;
       break;
     case '*':
-      answer = firstNumber * secondNumber;
+      rightAnswer = firstNumber * secondNumber;
       break;
     default:
-      answer = 'programm not working';
+      rightAnswer = 'programm not working';
   }
-  answer = String(answer);
+  rightAnswer = String(rightAnswer);
 
   return {
-    question,
-    answer,
+    mainQuestion,
+    rightAnswer,
   };
 };
 
 export default () => {
-  startGame(Descrption, gameProcess);
+  startGame(gameDescrption, gameProcess);
 };

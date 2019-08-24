@@ -1,7 +1,7 @@
 import getRandomint from '../randomizer';
 import startGame from '..';
 
-const Descrption = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameDescrption = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -17,14 +17,14 @@ const isPrime = (num) => {
 };
 
 const gameProcess = () => {
-  const question = getRandomint(1, 100);
-  const answer = isPrime(question) ? 'yes' : 'no';
+  const mainQuestion = getRandomint(1, 100);
+  const rightAnswer = isPrime(mainQuestion) ? 'yes' : 'no';
   return {
-    question,
-    answer,
+    mainQuestion,
+    rightAnswer,
   };
 };
 
 export default () => {
-  startGame(Descrption, gameProcess);
+  startGame(gameDescrption, gameProcess);
 };

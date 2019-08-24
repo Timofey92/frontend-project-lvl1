@@ -1,18 +1,19 @@
 import getRandomint from '../randomizer';
 import startGame from '..';
 
+const gameDescrption = 'Answer "yes" if number even otherwise answer "no".';
+
 const isEven = (num) => num % 2 === 0;
 
 const gameProcess = () => {
-  const question = getRandomint(1, 100);
-  const answer = isEven(question) ? 'yes' : 'no';
+  const mainQuestion = getRandomint(1, 100);
+  const rightAnswer = isEven(mainQuestion) ? 'yes' : 'no';
   return {
-    question,
-    answer,
+    mainQuestion,
+    rightAnswer,
   };
 };
-const Descrption = 'Answer "yes" if number even otherwise answer "no".';
 
 export default () => {
-  startGame(Descrption, gameProcess);
+  startGame(gameDescrption, gameProcess);
 };

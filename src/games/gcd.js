@@ -1,7 +1,7 @@
 import getRandomint from '../randomizer';
 import startGame from '..';
 
-const Descrption = 'Find the greatest common divisor of given numbers.';
+const gameDescrption = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (firstNumber, secondNumber) => {
   const maxNumber = Math.max(firstNumber, secondNumber);
@@ -21,16 +21,16 @@ const findGcd = (firstNumber, secondNumber) => {
 const gameProcess = () => {
   const firstNumber = getRandomint(100, 1);
   const secondNumber = getRandomint(100, 1);
-  const question = `${firstNumber} ${secondNumber}`;
+  const mainQuestion = `${firstNumber} ${secondNumber}`;
 
-  const answer = String(findGcd(firstNumber, secondNumber));
+  const rightAnswer = String(findGcd(firstNumber, secondNumber));
 
   return {
-    question,
-    answer,
+    mainQuestion,
+    rightAnswer,
   };
 };
 
 export default () => {
-  startGame(Descrption, gameProcess);
+  startGame(gameDescrption, gameProcess);
 };
