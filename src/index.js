@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 // Game Core,
 const questionsCount = 3;
 
-const startGame = (gameDescription, gameProcess) => {
+const startGame = (gameDescription, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
   console.log(gameDescription);
   console.log('');
@@ -11,14 +11,14 @@ const startGame = (gameDescription, gameProcess) => {
   console.log(`Hello, ${nameQuestion}!`);
 
   for (let i = 0; i < questionsCount; i += 1) {
-    const { mainQuestion, rightAnswer } = gameProcess();
+    const { question, rightAnswer } = getQuestionAndAnswer();
 
-    console.log(`Question: ${mainQuestion}`);
+    console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== rightAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-      console.log(`Let's try again, ${nameQuestion}`);
+      console.log(`Let's try again, ${question}`);
       return;
     }
     console.log('Correct!');

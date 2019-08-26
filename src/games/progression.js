@@ -3,28 +3,28 @@ import startGame from '..';
 
 const gameDescrption = 'What number is missing in the progression?';
 
-const progLength = 10;
+const progressionLength = 10;
 
-const gameProcess = () => {
+const getQuestionAndAnswer = () => {
   const firstNum = getRandomint(1, 50);
-  const progStep = getRandomint(1, 7);
-  const hideNum = getRandomint(0, progLength);
-  const rightAnswer = String(firstNum + progStep * hideNum);
-  const numCover = '..';
+  const progressionStep = getRandomint(1, 7);
+  const hiddenNumber = getRandomint(0, progressionLength - 1);
+  const rightAnswer = String(firstNum + progressionStep * hiddenNumber);
+  const numberShelter = '..';
   let result = '';
-  for (let i = 0; i < progLength; i += 1) {
-    if (i !== hideNum) {
-      result = `${result} ${firstNum + progStep * i}`;
-    } else result = `${result} ${numCover}`;
+  for (let i = 0; i < progressionLength; i += 1) {
+    if (i !== hiddenNumber) {
+      result = `${result} ${firstNum + progressionStep * i}`;
+    } else result = `${result} ${numberShelter}`;
   }
 
-  const mainQuestion = result;
+  const question = result;
   return {
-    mainQuestion,
+    question,
     rightAnswer,
   };
 };
 
 export default () => {
-  startGame(gameDescrption, gameProcess);
+  startGame(gameDescrption, getQuestionAndAnswer);
 };

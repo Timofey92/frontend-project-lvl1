@@ -2,7 +2,6 @@
   "name": "brga",
   "version": "1.0.0",
   "description": "Project",
-  "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -29,7 +28,7 @@
   },
   "homepage": "https://github.com/Timofey92/frontend-project-lvl1#readme",
   "keywords": [
-    "MyProj"
+    "Brain-Games"
   ],
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -43,7 +42,6 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
-    "mypackage": "^0.1.0",
     "readline-sync": "^1.4.10"
   }
 }

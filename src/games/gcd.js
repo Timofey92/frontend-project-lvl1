@@ -4,12 +4,12 @@ import startGame from '..';
 const gameDescrption = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (firstNumber, secondNumber) => {
-  const maxNumber = Math.max(firstNumber, secondNumber);
-  const minNumber = Math.min(firstNumber, secondNumber);
+  const lastNumber = Math.max(firstNumber, secondNumber);
+  const startNumber = Math.min(firstNumber, secondNumber);
 
   let gcd;
-  for (let i = minNumber; i > 0; i -= 1) {
-    if (minNumber % i === 0 && maxNumber % i === 0) {
+  for (let i = startNumber; i > 0; i -= 1) {
+    if (startNumber % i === 0 && lastNumber % i === 0) {
       gcd = i;
       break;
     }
@@ -18,19 +18,19 @@ const findGcd = (firstNumber, secondNumber) => {
   return gcd;
 };
 
-const gameProcess = () => {
+const getQuestionAndAnswer = () => {
   const firstNumber = getRandomint(100, 1);
   const secondNumber = getRandomint(100, 1);
-  const mainQuestion = `${firstNumber} ${secondNumber}`;
+  const question = `${firstNumber} ${secondNumber}`;
 
   const rightAnswer = String(findGcd(firstNumber, secondNumber));
 
   return {
-    mainQuestion,
+    question,
     rightAnswer,
   };
 };
 
 export default () => {
-  startGame(gameDescrption, gameProcess);
+  startGame(gameDescrption, getQuestionAndAnswer);
 };

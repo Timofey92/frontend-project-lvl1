@@ -4,16 +4,14 @@ import startGame from '..';
 
 const gameDescrption = 'What is the result of the expression?';
 
-const getOperators = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
-const operatorsLength = getOperators.length;
-
-const gameProcess = () => {
+const getQuestionAndAnswer = () => {
   const firstNumber = getRandomint(20, 1);
   const secondNumber = getRandomint(20, 1);
-  const operatorIndex = getRandomint(operatorsLength, 0);
-  const printOperator = getOperators[operatorIndex];
-  const mainQuestion = `${firstNumber} ${printOperator} ${secondNumber}`;
+  const operatorIndex = getRandomint(operators.length, 0);
+  const printOperator = operators[operatorIndex];
+  const question = `${firstNumber} ${printOperator} ${secondNumber}`;
 
   let rightAnswer;
 
@@ -28,16 +26,16 @@ const gameProcess = () => {
       rightAnswer = firstNumber * secondNumber;
       break;
     default:
-      rightAnswer = 'programm not working';
+      return false;
   }
   rightAnswer = String(rightAnswer);
 
   return {
-    mainQuestion,
+    question,
     rightAnswer,
   };
 };
 
 export default () => {
-  startGame(gameDescrption, gameProcess);
+  startGame(gameDescrption, getQuestionAndAnswer);
 };

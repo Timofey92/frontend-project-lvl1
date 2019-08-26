@@ -16,15 +16,15 @@ const isPrime = (num) => {
   return true;
 };
 
-const gameProcess = () => {
-  const mainQuestion = getRandomint(1, 100);
-  const rightAnswer = isPrime(mainQuestion) ? 'yes' : 'no';
+const getQuestionAndAnswer = () => {
+  const question = getRandomint(1, 100);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return {
-    mainQuestion,
+    question,
     rightAnswer,
   };
 };
 
 export default () => {
-  startGame(gameDescrption, gameProcess);
+  startGame(gameDescrption, getQuestionAndAnswer);
 };

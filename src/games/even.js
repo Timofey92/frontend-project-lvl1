@@ -5,15 +5,15 @@ const gameDescrption = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
-const gameProcess = () => {
-  const mainQuestion = getRandomint(1, 100);
-  const rightAnswer = isEven(mainQuestion) ? 'yes' : 'no';
+const getQuestionAndAnswer = () => {
+  const question = getRandomint(1, 100);
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
   return {
-    mainQuestion,
+    question,
     rightAnswer,
   };
 };
 
 export default () => {
-  startGame(gameDescrption, gameProcess);
+  startGame(gameDescrption, getQuestionAndAnswer);
 };
