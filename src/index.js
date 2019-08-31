@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
 
-// Game Core,
 const questionsCount = 3;
 
 const startGame = (gameDescription, getQuestionAndAnswer) => {
