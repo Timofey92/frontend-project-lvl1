@@ -19,8 +19,8 @@ const findGcd = (firstNumber, secondNumber) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const firstNumber = getRandomint(100, 1);
-  const secondNumber = getRandomint(100, 1);
+  const firstNumber = getRandomint(1, 50);
+  const secondNumber = getRandomint(1, 50);
   const question = `${firstNumber} ${secondNumber}`;
 
   const rightAnswer = String(findGcd(firstNumber, secondNumber));
