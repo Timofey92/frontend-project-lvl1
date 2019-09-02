@@ -7,31 +7,30 @@ const gameDescrption = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const getQuestionAndAnswer = () => {
-  const firstNumber = getRandomint(1, 20);
-  const secondNumber = getRandomint(1, 20);
-  const getOperator = operators[getRandomint(0, operators.length - 1)];
-  const question = `${firstNumber} ${getOperator} ${secondNumber}`;
+  const first = getRandomint(1, 20);
+  const second = getRandomint(1, 20);
+  const operator = operators[getRandomint(0, operators.length - 1)];
+  const question = `${first} ${operator} ${second}`;
 
-  let calculator;
+  let rightAnswer;
 
-  switch (getOperator) {
+  switch (operator) {
     case '+':
-      calculator = firstNumber + secondNumber;
+      rightAnswer = first + second;
       break;
     case '-':
-      calculator = firstNumber - secondNumber;
+      rightAnswer = first - second;
       break;
     case '*':
-      calculator = firstNumber * secondNumber;
+      rightAnswer = first * second;
       break;
     default:
       return false;
   }
-  const rightAnswer = String(calculator);
 
   return {
     question,
-    rightAnswer,
+    rightAnswer: rightAnswer.toString(),
   };
 };
 

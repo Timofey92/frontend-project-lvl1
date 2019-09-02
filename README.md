@@ -1,7 +1,13 @@
 # frontend-project-lvl1
-[![Maintainability](https://api.codeclimate.com/v1/badges/555ddfcd66b22926507b/maintainability)](https://codeclimate.com/github/Timofey92/frontend-project-lvl1/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/555ddfcd66b22926507b/maintainability)](https://codeclimate.com/github/Timofey92/frontend-project-lvl1/maintainability) [![Build Status](https://travis-ci.org/Timofey92/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Timofey92/frontend-project-lvl1)
 
-[![Build Status](https://travis-ci.org/Timofey92/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Timofey92/frontend-project-lvl1)
+Проект представляет собой серию консольных игр под общим названием Brain Games.
+
+#Install
+
+Установить зависимости командой ```$npm install```
+
+Установить пакет командой ```$npm link```
 
 # brain-even
 [![asciicast](https://asciinema.org/a/cHn8IcYJ9EqmyCMEdkenNuqQF.svg)](https://asciinema.org/a/cHn8IcYJ9EqmyCMEdkenNuqQF)

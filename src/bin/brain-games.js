@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-import greetings from '..';
+import startGame from '..';
 
-const askName = () => greetings();
-askName();
-
-export default askName;
+startGame();
