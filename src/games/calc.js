@@ -1,4 +1,3 @@
-/* eslint-disable no-fallthrough */
 import getRandomint from '../randomizer';
 import startGame from '..';
 

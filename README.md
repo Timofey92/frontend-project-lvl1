@@ -13,7 +13,7 @@
 
 Игроку представляется случайное число. Необходимо дать ответ yes - если число четное, no - если нечетное. 
 
-[![asciicast](https://asciinema.org/a/cHn8IcYJ9EqmyCMEdkenNuqQF.svg)](https://asciinema.org/a/cHn8IcYJ9EqmyCMEdkenNuqQF)
+[![asciicast](https://asciinema.org/a/Oo5QKKwUGAarOVNLnv7u9bpS1.svg)](https://asciinema.org/a/Oo5QKKwUGAarOVNLnv7u9bpS1)
 
 # brain-calc
 
