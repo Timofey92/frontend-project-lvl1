@@ -14,11 +14,11 @@ const getQuestionAndAnswer = () => {
   for (let i = 0; i < progressionLength; i += 1) {
     if (i !== hiddenNumberIndex) {
       question = `${question} ${firstNumber + progressionStep * i}`;
-    } else question += ' ..';
+    } else question = `${question} ..`;
   }
 
   return {
-    question,
+    question: question.trim(),
     rightAnswer,
   };
 };
